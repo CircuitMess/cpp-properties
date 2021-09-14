@@ -30,14 +30,14 @@ Properties::Properties() {
 Properties::~Properties() {
 }
 
-std::string Properties::GetProperty(const std::string& key) const {
+const std::string& Properties::GetProperty(const std::string& key) const {
     if (properties.find(key) == properties.end()) {
         throw PropertyNotFoundException(key + " does not exist");
     }
     return properties.at(key);
 }
 
-std::string Properties::GetProperty(const std::string& key, const std::string& defaultValue) const {
+const std::string& Properties::GetProperty(const std::string& key, const std::string& defaultValue) const {
     if (properties.find(key) == properties.end()) {
         return defaultValue;
     }

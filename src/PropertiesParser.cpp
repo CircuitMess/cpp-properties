@@ -52,7 +52,7 @@ Properties PropertiesParser::Read(const std::string& file) {
                 std::pair<std::string, std::string> prop = PropertiesUtils::ParseProperty(line);
                 properties.AddProperty(prop.first, prop.second);
             } else {
-                throw PropertiesException("PropertiesParser::Read(" + file + "): Invalid line " + std::to_string(linenr) + ": " + line);
+                throw PropertiesException("PropertiesParser::Read(" + file + "): Invalid line " + ": " + line);
             }
             ++linenr;
         }
